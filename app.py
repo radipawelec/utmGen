@@ -55,12 +55,14 @@ class MakeUTMlink:
 
 class MakeUTMVMJ:
     def __init__(self, link):
-        page_response = requests.get(link, timeout=10).text
-        page_content = BeautifulSoup(page_response, 'lxml').select('#jd_reference')
-        data_into_str = page_content[0].text.strip()
-        ref = data_into_str
-        self.result_link = link+"?utm_source=linkedin&utm_medium=social&utm_camaign=vmj&utm_content="+ref
-
+        try:
+            page_response = requests.get(link, timeout=10).text
+            page_content = BeautifulSoup(page_response, 'lxml').select('#jd_reference')
+            data_into_str = page_content[0].text.strip()
+            ref = data_into_str
+            self.result_link = link+"?utm_source=linkedin&utm_medium=social&utm_camaign=vmj&utm_content="+ref
+        except:
+            self.result_link = "Wprowadź poprawny link do ogłoszenia na hays.pl/hays-response.pl"
 
 
 if __name__ == '__main__':
