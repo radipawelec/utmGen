@@ -34,6 +34,8 @@ def my_form_post():
 def vmj_form_post():
 
     link = request.form['link']
+    sep = "?"
+    link = link.split(sep, 1)[0]
     v = MakeUTMVMJ(link)
 
 
