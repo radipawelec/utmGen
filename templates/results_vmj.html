@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap-social.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.10/css/brands.css"
+      integrity="sha384-KtmfosZaF4BaDBojD9RXBSrq5pNEO79xGiggBxf8tsX+w2dBRpVW5o0BPto2Rb2F"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+      integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+      crossorigin="anonymous"
+    />
+
+    <title>UTM VMJ generator</title>
+  </head>
+  <body>
+    <!-- Image and text -->
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Hays_plc_2009_logo.svg/1280px-Hays_plc_2009_logo.svg.png" width="150" height="30" class="d-inline-block align-top" alt="">
+    </a>
+  </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-"></div>
+        <div class="col-md">
+          <br /><br />
+
+          <div class="list-group">
+
+            <p><b>Link to share offer on social media:</b> (click to copy)</p>
+            <button
+              onclick="copying_function(link)"
+              type="button"
+              class="list-group-item list-group-item-action"
+            >
+              {{ link }}</button
+            ><br />
+
+            <br /><br />
+            <a
+          class="btn btn-social btn-github btn-block"
+          href="https://github.com/radipawelec/utmGen"
+          target="_blank"
+        >
+          <span class="fab fa-github"></span>
+          RadiPawelec - GitHub repository</a
+        >
+          </div>
+        </div>
+        <div class="col-">
+          <br /><br />
+
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      var link2= "{{link}}";
+      var link = link2.replace(/&amp;/g, '&');
+
+    </script>
+
+    <script>
+      function copying_function(string) {
+        // string.select();
+        const el = document.createElement("textarea");
+        el.value = string;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand("copy");
+        console.log(
+          "The data copied successfully! press `ctrl+v` to see output"
+        );
+        document.body.removeChild(el);
+      }
+    </script>
+  </body>
+</html>

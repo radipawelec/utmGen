@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap-social.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.10/css/brands.css"
+      integrity="sha384-KtmfosZaF4BaDBojD9RXBSrq5pNEO79xGiggBxf8tsX+w2dBRpVW5o0BPto2Rb2F"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+      integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+      crossorigin="anonymous"
+    />
+
+    <title>UTM generator</title>
+  </head>
+  <body>
+      <nav class="navbar navbar-light bg-light">
+          <a class="navbar-brand" href="#">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Hays_plc_2009_logo.svg/1280px-Hays_plc_2009_logo.svg.png" width="150" height="30" class="d-inline-block align-top" alt="">
+          </a>
+        </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-"></div>
+        <div class="col-md">
+          <br /><br />
+          <form method="POST">
+            <div class="form-group">
+              <!-- <label for="inputLink">Link</label> -->
+              <input
+                name="link"
+                type="text"
+                class="form-control"
+                id="inputLink"
+                placeholder="Link do oferty na hays.pl / hays-response.pl"
+              />
+            </div>
+<!--            <div class="form-group">-->
+<!--              &lt;!&ndash; <label for="inputLink">Link</label> &ndash;&gt;-->
+<!--              <input-->
+<!--                name="content"-->
+<!--                type="text"-->
+<!--                class="form-control"-->
+<!--                id="inputref"-->
+<!--                placeholder="Numer REF ogłoszenia na stronie"-->
+<!--              />-->
+<!--            </div>-->
+            <br /><br />
+            <button type="submit" class="btn btn-outline-dark btn-block">
+              Submit
+            </button>
+          </form>
+          <br /><br />
+          <a
+          class="btn btn-social btn-github btn-block"
+          href="https://github.com/radipawelec/utmGen"
+          target="_blank"
+        >
+          <span class="fab fa-github"></span>
+          RadiPawelec - GitHub repository</a
+        >
+        </div>
+        <div class="col-">
+          <br /><br />
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
