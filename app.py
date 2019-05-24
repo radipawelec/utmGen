@@ -2,7 +2,6 @@ from flask import Flask, render_template, request
 from bs4 import BeautifulSoup
 import requests
 import os
-from emoji import emojize
 
 app = Flask(__name__)
 
@@ -47,7 +46,6 @@ def vmj_form_post():
     link = link.split(sep, 1)[0]
     v = MakeUTMVMJ(link)
 
-    print(emojize(":thumbs_up:"))
 
     return render_template('results_vmj.html', link=v.result_link)
 
@@ -74,7 +72,6 @@ def vmj_form_post_cz():
     link = link.split(sep, 1)[0]
     v = MakeUTMVMJ_CZ(link)
 
-    print(emojize(":thumbs_up:"))
 
     return render_template('results_vmj_cz.html', link_fb=v.result_link_fb, link_li=v.result_link_li)
 
@@ -102,7 +99,7 @@ def vmj_form_post_hu():
     link = link.split(sep, 1)[0]
     v = MakeUTMVMJ_HU(link)
 
-    print(emojize(":thumbs_up:"))
+
 
     return render_template('results_vmj_hu.html', link_fb=v.result_link_fb, link_li=v.result_link_li)
 
