@@ -8,7 +8,6 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -33,47 +32,43 @@
       crossorigin="anonymous"
     />
 
-    <title>UTM generator</title>
+    <title>UTM VMJ generator</title>
   </head>
   <body>
-      <nav class="navbar navbar-light bg-light">
-          <a class="navbar-brand" href="#">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Hays_plc_2009_logo.svg/1280px-Hays_plc_2009_logo.svg.png" width="150" height="30" class="d-inline-block align-top" alt="">
-          </a>
-        </nav>
+    <!-- Image and text -->
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Hays_plc_2009_logo.svg/1280px-Hays_plc_2009_logo.svg.png" width="150" height="30" class="d-inline-block align-top" alt="">
+    </a>
+  </nav>
     <div class="container">
       <div class="row">
         <div class="col-"></div>
         <div class="col-md">
           <br /><br />
-          <form method="POST">
-            <div class="form-group">
-              <!-- <label for="inputLink">Link</label> -->
-              <input
-                name="link"
-                type="text"
-                class="form-control"
-                id="inputLink"
-                placeholder="Please, paste here link to Hays job offer"
-              />
-            </div>
-<!--            <div class="form-group">-->
-<!--              &lt;!&ndash; <label for="inputLink">Link</label> &ndash;&gt;-->
-<!--              <input-->
-<!--                name="content"-->
-<!--                type="text"-->
-<!--                class="form-control"-->
-<!--                id="inputref"-->
-<!--                placeholder="Numer REF ogłoszenia na stronie"-->
-<!--              />-->
-<!--            </div>-->
+
+          <div class="list-group">
+
+            <p><b>Link to share offer on social media:</b> (click to copy)</p>
+              <p>Facebook:</p>
+            <button
+              onclick="copying_function(link_fb)"
+              type="button"
+              class="list-group-item list-group-item-action"
+            >
+              {{ link_fb }}</button
+            ><br />
+                            <p>Linkedin:</p>
+
+<button
+              onclick="copying_function(link_li)"
+              type="button"
+              class="list-group-item list-group-item-action"
+            >
+              {{ link_li }}</button
+            ><br />
             <br /><br />
-            <button type="submit" class="btn btn-outline-dark btn-block">
-              Submit
-            </button>
-          </form>
-          <br /><br />
-          <a
+            <a
           class="btn btn-social btn-github btn-block"
           href="https://github.com/radipawelec/utmGen"
           target="_blank"
@@ -81,23 +76,20 @@
           <span class="fab fa-github"></span>
           RadiPawelec - GitHub repository</a
         >
+          </div>
         </div>
         <div class="col-">
           <br /><br />
 
 
-          </div>
         </div>
       </div>
     </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -108,5 +100,29 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      var link_fb_2= "{{link_fb}}";
+      var link_fb = link_fb_2.replace(/&amp;/g, '&');
+
+      var link_li_2= "{{link_li}}";
+      var link_li = link_li_2.replace(/&amp;/g, '&');
+
+    </script>
+
+    <script>
+      function copying_function(string) {
+        // string.select();
+        const el = document.createElement("textarea");
+        el.value = string;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand("copy");
+        console.log(
+          "The data copied successfully! press `ctrl+v` to see output"
+        );
+        document.body.removeChild(el);
+      }
+    </script>
   </body>
 </html>
