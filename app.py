@@ -1,17 +1,25 @@
 from flask import Flask, render_template, request
 from bs4 import BeautifulSoup
 import requests
-import os
-
+from bitly_api import *
+from bitlyshortener import *
 app = Flask(__name__)
-
 
 from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
+# API_TOKEN = "86ef8bdd0f5eff2603eac6f4e1737e03e62f8a99&"
+# CALL_BILTY_API = ('https://api-ssl.bitly.com/v3/shorten?format=json&access_token={}&longUrl={}')
+
 @app.route('/')
 def my_form():
+    # tokens_pool = ['86ef8bdd0f5eff2603eac6f4e1737e03e62f8a99']  # Use your own.
+    # shortener = Shortener(tokens=tokens_pool, max_cache_size=8192)
+    # urls = ['https://paperswithcode.com/sota', 'https://arxiv.org/', 'https://arxiv.org/list/cs.LG/recent']
+    # results = shortener.shorten_urls(urls)
+    # print(results)
+
     return render_template('my-form.html')
 
 @app.route('/vmj')
@@ -29,7 +37,6 @@ def my_form_vmj_hu():
 
 @app.route('/', methods=['POST'])
 def my_form_post():
-
     link = request.form['link']
     campaign = request.form['campaign']
     content = request.form['content']
@@ -123,9 +130,22 @@ class MakeUTMlink:
     def __init__(self, link, campaign, content):
         if content == "":
             self.fb = link + "?umt_source=facebook&utm_medium=social&utm_campaign=" + campaign
+            print(self.fb)
+            # data = requests.get(CALL_BILTY_API.format(API_TOKEN, self.fb)).json()
+            # self.fb_short = (data['data']['url'])
+
             self.cpc = link + "?umt_source=facebook&utm_medium=cpc&utm_campaign=" + campaign
+            # data = requests.get(CALL_BILTY_API.format(API_TOKEN, self.cpc)).json()
+            # self.cpc_short = (data['data']['url'])
+
             self.li = link + "?umt_source=linkedin&utm_medium=social&utm_campaign=" + campaign
+            # data = requests.get(CALL_BILTY_API.format(API_TOKEN, self.li)).json()
+            # self.li_short = (data['data']['url'])
+
             self.mail = link+"?umt_source=newsletter&utm_medium=email&utm_campaign="+campaign
+            # data = requests.get(CALL_BILTY_API.format(API_TOKEN, self.mail)).json()
+            # self.mail_short = (data['data']['url'])
+
         else:
             self.fb = link + "?umt_source=facebook&utm_medium=social&utm_campaign=" + campaign+"&utm_content="+content
             self.cpc = link + "?umt_source=facebook&utm_medium=cpc&utm_campaign=" + campaign+"&utm_content="+content

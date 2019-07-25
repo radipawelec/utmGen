@@ -44,7 +44,7 @@
           <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item"><a href="/vmj">MVJ - PL</a></li>
+    <li class="breadcrumb-item"><a href="/vmj">VMJ - PL</a></li>
     <li class="breadcrumb-item"><a href="/vmj/hu">VMJ - HU</a></li>
     <li class="breadcrumb-item"><a href="/vmj/cz">VMJ - CZ</a></li>
   </ol>
@@ -64,7 +64,16 @@
               class="list-group-item list-group-item-action"
             >
               {{ fb }}</button
-            ><br />
+            >
+<!--             <button-->
+<!--              onclick="copying_function(fb_short)"-->
+<!--              type="button"-->
+<!--              class="list-group-item list-group-item-action"-->
+<!--            >-->
+<!--              {{ fb_short }}</button-->
+<!--            ><br />-->
+            <br />
+
             <p><b>Facebook cpc:</b> (click to copy)</p>
             <button
               onclick="copying_function(cpc)"
@@ -72,15 +81,32 @@
               class="list-group-item list-group-item-action"
             >
               {{ cpc }}</button
-            ><br />
+            >
+<!--            <button-->
+<!--              onclick="copying_function(cpc_short)"-->
+<!--              type="button"-->
+<!--              class="list-group-item list-group-item-action"-->
+<!--            >-->
+<!--              {{ cpc_short }}</button-->
+            <br />
+
             <p><B>Linkedin:</B> (click to copy)</p>
             <button
               onclick="copying_function(li)"
               type="button"
               class="list-group-item list-group-item-action"
             >
-              {{ li }}</button
-            ><br />
+              {{ li }}
+            </button>
+            <!--<button
+              onclick="copying_function(li_short)"
+              type="button"
+              class="list-group-item list-group-item-action"
+            >
+              {{ li_short }}</button
+            >-->
+            <br />
+
             <p><B>Mail:</B> (click to copy)</p>
             <label for="mail" display: inline-block></label>
             <button
@@ -90,7 +116,16 @@
             >
               {{ mail }}
             </button>
+<!--            <button-->
+<!--              onclick="copying_function(mail_short)"-->
+<!--              type="button"-->
+<!--              class="list-group-item list-group-item-action"-->
+<!--            >-->
+<!--              {{ mail_short }}-->
+<!--            </button>-->
             <br /><br />
+
+
             <a
           class="btn btn-social btn-github btn-block"
           href="https://github.com/radipawelec/utmGen"
@@ -133,6 +168,11 @@
       var li = li2.replace(/&amp;/g, '&');
       var mail2 = "{{ mail }}";
       var mail = mail2.replace(/&amp;/g, '&');
+      // var fb_short = "{{fb_short}}";
+      // var li_short = "{{li_short}}";
+      // var cpc_short = "{{cpc_short}}";
+      // var mail_short = "{{mail_short}}";
+
 
     </script>
 
