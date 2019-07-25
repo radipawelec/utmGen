@@ -1,8 +1,6 @@
 from flask import Flask, render_template, request
 from bs4 import BeautifulSoup
 import requests
-from bitly_api import *
-from bitlyshortener import *
 app = Flask(__name__)
 
 from flask import Flask, request, render_template
