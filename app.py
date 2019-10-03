@@ -135,7 +135,7 @@ def vmj_form_post_ro():
     link = request.form['link']
     sep = "?"
     link = link.split(sep, 1)[0]
-    v = MakeUTMVMJ_HU(link)
+    v = MakeUTMVMJ_RO(link)
 
 
 
