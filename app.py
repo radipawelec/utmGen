@@ -33,6 +33,11 @@ def my_form_vmj_hu():
     return render_template('vmj-form.html')
 
 
+@app.route('/vmj/ro')
+def my_form_vmj_ro():
+    return render_template('vmj-form.html')
+
+
 @app.route('/', methods=['POST'])
 def my_form_post():
     link = request.form['link']
@@ -121,6 +126,35 @@ class MakeUTMVMJ_HU:
         except:
             self.result_link_li = "Please provide correct link to hays.hu/hays-response.hu website"
             self.result_link_fb = "Please provide correct link to hays.hu/hays-response.hu website"
+
+
+
+@app.route('/vmj/ro', methods=['POST'])
+def vmj_form_post_ro():
+
+    link = request.form['link']
+    sep = "?"
+    link = link.split(sep, 1)[0]
+    v = MakeUTMVMJ_HU(link)
+
+
+
+    return render_template('results_vmj_hu.html', link_fb=v.result_link_fb, link_li=v.result_link_li)
+
+
+class MakeUTMVMJ_RO:
+    def __init__(self, link):
+        try:
+            page_response = requests.get(link, timeout=10).text
+            page_content = BeautifulSoup(page_response, 'lxml').select('#jd_reference')
+            data_into_str = page_content[0].text.strip()
+            ref = data_into_str
+            self.result_link_li = link+"?utm_source=Linkedin&utm_medium=social&utm_campaign=vmj&utm_content="+ref
+            self.result_link_fb = link+"?utm_source=Facebook&utm_medium=social&utm_campaign=vmj&utm_content="+ref
+        except:
+            self.result_link_li = "Please provide correct link to hays.ro website"
+            self.result_link_fb = "Please provide correct link to hays.ro website"
+
 
 
 
