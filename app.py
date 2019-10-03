@@ -67,7 +67,7 @@ class MakeUTMVMJ:
             page_content = BeautifulSoup(page_response, 'lxml').select('#jd_reference')
             data_into_str = page_content[0].text.strip()
             ref = data_into_str
-            self.result_link = link+"?utm_source=linkedin&utm_medium=social&utm_campaign=vmj&utm_content="+ref
+            self.result_link = link+"?utm_source=linkedin&utm_medium=social&utm_campaign=vmj&utm_content="+ref+"&jobSource=VMJ"
         except:
             self.result_link = "Wprowadź poprawny link do ogłoszenia na hays.pl/hays-response.pl"
 
@@ -93,8 +93,8 @@ class MakeUTMVMJ_CZ:
             page_content = BeautifulSoup(page_response, 'lxml').select('#jd_reference')
             data_into_str = page_content[0].text.strip()
             ref = data_into_str
-            self.result_link_li = link+"?utm_source=Linkedin&utm_medium=social&utm_campaign=vmj&utm_content="+ref
-            self.result_link_fb = link+"?utm_source=Facebook&utm_medium=social&utm_campaign=vmj&utm_content="+ref
+            self.result_link_li = link+"?utm_source=Linkedin&utm_medium=social&utm_campaign=vmj&utm_content="+ref+"&jobSource=VMJ"
+            self.result_link_fb = link+"?utm_source=Facebook&utm_medium=social&utm_campaign=vmj&utm_content="+ref+"&jobSource=VMJ"
         except:
             self.result_link_li= "Please provide correct link to hays.cz/hays-response.cz website"
             self.result_link_fb= "Please provide correct link to hays.cz/hays-response.cz website"
@@ -121,8 +121,8 @@ class MakeUTMVMJ_HU:
             page_content = BeautifulSoup(page_response, 'lxml').select('#jd_reference')
             data_into_str = page_content[0].text.strip()
             ref = data_into_str
-            self.result_link_li = link+"?utm_source=Linkedin&utm_medium=social&utm_campaign=vmj&utm_content="+ref
-            self.result_link_fb = link+"?utm_source=Facebook&utm_medium=social&utm_campaign=vmj&utm_content="+ref
+            self.result_link_li = link+"?utm_source=Linkedin&utm_medium=social&utm_campaign=vmj&utm_content="+ref+"&jobSource=VMJ"
+            self.result_link_fb = link+"?utm_source=Facebook&utm_medium=social&utm_campaign=vmj&utm_content="+ref+"&jobSource=VMJ"
         except:
             self.result_link_li = "Please provide correct link to hays.hu/hays-response.hu website"
             self.result_link_fb = "Please provide correct link to hays.hu/hays-response.hu website"
@@ -149,8 +149,8 @@ class MakeUTMVMJ_RO:
             page_content = BeautifulSoup(page_response, 'lxml').select('#jd_reference')
             data_into_str = page_content[0].text.strip()
             ref = data_into_str
-            self.result_link_li = link+"?utm_source=Linkedin&utm_medium=social&utm_campaign=vmj&utm_content="+ref
-            self.result_link_fb = link+"?utm_source=Facebook&utm_medium=social&utm_campaign=vmj&utm_content="+ref
+            self.result_link_li = link+"?utm_source=Linkedin&utm_medium=social&utm_campaign=vmj&utm_content="+ref+"&jobSource=VMJ"
+            self.result_link_fb = link+"?utm_source=Facebook&utm_medium=social&utm_campaign=vmj&utm_content="+ref+"&jobSource=VMJ"
         except:
             self.result_link_li = "Please provide correct link to hays.ro website"
             self.result_link_fb = "Please provide correct link to hays.ro website"
