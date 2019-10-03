@@ -139,7 +139,7 @@ def vmj_form_post_ro():
 
 
 
-    return render_template('results_vmj_hu.html', link_fb=v.result_link_fb, link_li=v.result_link_li)
+    return render_template('results_vmj_ro.html', link_fb=v.result_link_fb, link_li=v.result_link_li)
 
 
 class MakeUTMVMJ_RO:
