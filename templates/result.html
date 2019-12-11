@@ -130,6 +130,25 @@
             <br /><br />
 
 
+              <p><B>YouTube:</B> (click to copy)</p>
+            <label for="yt" display: inline-block></label>
+            <button
+              onclick="copying_function(yt)"
+              type="button"
+              class="list-group-item list-group-item-action"
+            >
+              {{ yt }}
+            </button>
+<!--            <button-->
+<!--              onclick="copying_function(mail_short)"-->
+<!--              type="button"-->
+<!--              class="list-group-item list-group-item-action"-->
+<!--            >-->
+<!--              {{ yt_short }}-->
+<!--            </button>-->
+            <br /><br />
+
+<br/><br/>
             <a
           class="btn btn-social btn-github btn-block"
           href="https://github.com/radipawelec/utmGen"
@@ -172,6 +191,8 @@
       var li = li2.replace(/&amp;/g, '&');
       var mail2 = "{{ mail }}";
       var mail = mail2.replace(/&amp;/g, '&');
+      var yt2 = "{{ yt }}";
+      var yt = yt2.replace(/&amp;/g, '&');
       // var fb_short = "{{fb_short}}";
       // var li_short = "{{li_short}}";
       // var cpc_short = "{{cpc_short}}";
