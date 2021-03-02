@@ -46,7 +46,7 @@ def my_form_post():
 
     m = MakeUTMlink(link, campaign, content)
 
-    return render_template('result.html', fb=m.fb, cpc=m.cpc, li=m.li, mail=m.mail, yt=m.yt)
+    return render_template('result.html', fb=m.fb, cpc=m.cpc, li=m.li, mail=m.mail, yt=m.yt, press=m.press)
 
 @app.route('/vmj', methods=['POST'])
 def vmj_form_post():
@@ -169,17 +169,15 @@ class MakeUTMlink:
             self.cpc = link + "?utm_source=facebook&utm_medium=cpc&utm_campaign=" + campaign
             # data = requests.get(CALL_BILTY_API.format(API_TOKEN, self.cpc)).json()
             # self.cpc_short = (data['data']['url'])
-
             self.li = link + "?utm_source=linkedin&utm_medium=social&utm_campaign=" + campaign
             # data = requests.get(CALL_BILTY_API.format(API_TOKEN, self.li)).json()
             # self.li_short = (data['data']['url'])
             self.yt = link+"?utm_source=youtube&utm_medium=social&utm_campaign="+campaign
-
-
             self.mail = link+"?utm_source=newsletter&utm_medium=email&utm_campaign="+campaign
             # data = requests.get(CALL_BILTY_API.format(API_TOKEN, self.mail)).json()
             # self.mail_short = (data['data']['url'])
-            self.mail = link+"?utm_source=youtube&utm_medium=social&utm_campaign="+campaign
+            # self.mail = link+"?utm_source=youtube&utm_medium=social&utm_campaign="+campaign
+            self.press = link+"?utm_source=newsletter&utm_medium=email&utm_campaign="+campaign+"&utm_content=media"
 
 
         else:
@@ -188,6 +186,7 @@ class MakeUTMlink:
             self.cpc = link + "?utm_source=facebook&utm_medium=cpc&utm_campaign=" + campaign+"&utm_content="+content
             self.li = link + "?utm_source=linkedin&utm_medium=social&utm_campaign=" + campaign+"&utm_content="+content
             self.mail = link + "?utm_source=newsletter&utm_medium=email&utm_campaign=" + campaign+"&utm_content="+content
+            self.press = link+"?utm_source=newsletter&utm_medium=email&utm_campaign="+campaign+"&utm_content=media"
 
 
 

@@ -148,6 +148,17 @@
 <!--            </button>-->
             <br /><br />
 
+
+               <p><B>Media:</B> (click to copy)</p>
+            <label for="press" display: inline-block></label>
+            <button
+              onclick="copying_function(press)"
+              type="button"
+              class="list-group-item list-group-item-action"
+            >
+              {{ press }}
+            </button>
+
 <br/><br/>
             <a
           class="btn btn-social btn-github btn-block"
@@ -193,6 +204,9 @@
       var mail = mail2.replace(/&amp;/g, '&');
       var yt2 = "{{ yt }}";
       var yt = yt2.replace(/&amp;/g, '&');
+      var press2 = "{{ press }}";
+      var press = press2.replace(/&amp;/g, '&');
+
       // var fb_short = "{{fb_short}}";
       // var li_short = "{{li_short}}";
       // var cpc_short = "{{cpc_short}}";
